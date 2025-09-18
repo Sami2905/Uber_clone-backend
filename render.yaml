@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: uber-clone-api
+    env: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: node dist/index.js
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: CLERK_JWKS_URL
+        sync: false
+      - key: CLERK_ISSUER
+        sync: false
+
+
