@@ -1,9 +1,9 @@
-services:
+﻿services:
   - type: web
     name: uber-clone-api
     env: node
     plan: free
-    buildCommand: npm ci && npm run build
+    buildCommand: npm ci
     startCommand: node dist/index.js
     autoDeploy: true
     envVars:
@@ -21,5 +21,6 @@ services:
         sync: false
       - key: CLERK_ISSUER
         sync: false
+
 
 
